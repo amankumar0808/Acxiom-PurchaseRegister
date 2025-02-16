@@ -1,0 +1,17 @@
+projection;
+strict ( 2 );
+define behavior for ZC_purchaseinvTP alias purchaseinv
+use etag
+
+{
+  use delete;
+
+  use association _purchaseline { create; }
+}
+
+define behavior for ZC_purchaselineTP alias purchaseline
+use etag
+
+{
+  use association _purchaseinv;
+}

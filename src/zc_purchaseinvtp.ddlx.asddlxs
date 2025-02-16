@@ -1,0 +1,122 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'purchaseinv', 
+    typeNamePlural: 'purchaseinvs', 
+    title: {
+      type: #STANDARD, 
+      label: 'purchaseinv', 
+      value: 'Supplierinvoice'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Supplierinvoice', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_purchaseinvTP with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'purchaseinv', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 20 
+  }, 
+  {
+    id: 'idpurchaseline', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'purchaseline', 
+    position: 30 , 
+    targetElement: '_purchaseline'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Companycode'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Companycode'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Companycode;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Fiscalyearvalue'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Fiscalyearvalue'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Fiscalyearvalue;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Supplierinvoice'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Supplierinvoice'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Supplierinvoice;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  Supplierinvoicewthnfiscalyear;
+  
+    @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  AddressID;
+  
+      @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Supplierinvoicewthnfiscalyear'
+  } ]
+  Plant;
+  
+  
+  @UI.hidden: true
+  Creationdatetime;
+}

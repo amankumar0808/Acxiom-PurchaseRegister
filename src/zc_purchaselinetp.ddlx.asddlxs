@@ -1,0 +1,626 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'purchaseline', 
+    typeNamePlural: 'purchaselines', 
+    title: {
+      type: #STANDARD, 
+      label: 'purchaseline', 
+      value: 'Supplierinvoiceitem'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Supplierinvoiceitem', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_purchaselineTP with
+{
+  @UI.facet: [ {
+    id: 'idpurchaseline', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'purchaseline', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Company code'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Company code'
+  } ]
+  Companycode;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Fiscal year value'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Fiscal year value'
+  } ]
+  Fiscalyearvalue;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Supplier invoice'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Supplier invoice'
+  } ]
+  Supplierinvoice;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Supplier invoice item'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Supplier invoice item'
+  } ]
+  Supplierinvoiceitem;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'Posting date'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Posting date'
+  } ]
+  Postingdate;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'Plant name'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Plant name'
+  } ]
+  Plantname;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'Plant Address'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Plant Address'
+  } ]
+  Plantadr;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'Plant city'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Plant city'
+  } ]
+  Plantcity;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'Plant gst'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Plant gst'
+  } ]
+  Plantgst;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH, 
+    label: 'Plant pin'
+  } ]
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Plant pin'
+  } ]
+  Plantpin;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH, 
+    label: 'Product'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Product'
+  } ]
+  Product;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #HIGH, 
+    label: 'Product name'
+  } ]
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Product name'
+  } ]
+  Productname;
+  
+  @UI.lineItem: [ {
+    position: 130 , 
+    importance: #HIGH, 
+    label: 'Purchase order'
+  } ]
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Purchase order'
+  } ]
+  Purchaseorder;
+  
+  @UI.lineItem: [ {
+    position: 140 , 
+    importance: #HIGH, 
+    label: 'Purchase order item'
+  } ]
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Purchase order item'
+  } ]
+  Purchaseorderitem;
+  
+////////////////////////////// ******************** ////////////////////////////////////////  
+        @UI.lineItem: [ {
+    position: 141 , 
+    importance: #HIGH, 
+    label: 'Product Trade Name'
+  } ]
+  @UI.identification: [ {
+    position: 141 , 
+    label: 'Product Trade Name'
+  } ]
+  product_trade_name;
+  
+          @UI.lineItem: [ {
+    position: 142 , 
+    importance: #HIGH, 
+    label: 'Vendor Invoice No.'
+  } ]
+  @UI.identification: [ {
+    position: 142 , 
+    label: 'Vendor Invoice No.'
+  } ]
+  vendor_invoice_no;
+  
+            @UI.lineItem: [ {
+    position: 143 , 
+    importance: #HIGH, 
+    label: 'Vendor Invoice Date'
+  } ]
+  @UI.identification: [ {
+    position: 143 , 
+    label: 'Vendor Invoice Date'
+  } ]
+  vendor_invoice_date;
+  
+              @UI.lineItem: [ {
+    position: 144 , 
+    importance: #HIGH, 
+    label: 'Vendor Type'
+  } ]
+  @UI.identification: [ {
+    position: 144 , 
+    label: 'Vendor Type'
+  } ]
+  vendor_type;
+  
+                 @UI.lineItem: [ {
+    position: 145 , 
+    importance: #HIGH, 
+    label: 'Type of enterprise'
+  } ]
+  @UI.identification: [ {
+    position: 145 , 
+    label: 'Type of enterprise'
+  } ]
+  TypeofEnterprise;
+  
+                   @UI.lineItem: [ {
+    position: 146 , 
+    importance: #HIGH, 
+    label: 'Udhyam Aadhar No'
+  } ]
+  @UI.identification: [ {
+    position: 146 , 
+    label: 'Udhyam Aadhar No'
+  } ]
+  UdhyamAadharNo;
+  
+                   @UI.lineItem: [ {
+    position: 147 , 
+    importance: #HIGH, 
+    label: 'Udhyam Certificate Date'
+  } ]
+  @UI.identification: [ {
+    position: 147 , 
+    label: 'Udhyam Certificate Date'
+  } ]
+  UdhyamCertificateDate;
+  
+                   @UI.lineItem: [ {
+    position: 148 , 
+    importance: #HIGH, 
+    label: 'Udhyam Certificate Receiving Date'
+  } ]
+  @UI.identification: [ {
+    position: 148 , 
+    label: 'Udhyam Certificate Receiving Date'
+  } ]
+  UdhyamCertificateReceivingDate;
+  
+               @UI.lineItem: [ {
+    position: 149 , 
+    importance: #HIGH, 
+    label: 'RFQ NO'
+  } ]
+  @UI.identification: [ {
+    position: 149 , 
+    label: 'RFQ NO'
+  } ]
+  RFQNO; 
+  
+             @UI.lineItem: [ {
+    position: 150 , 
+    importance: #HIGH, 
+    label: 'RFQ Date'
+  } ]
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'RFQ Date'
+  } ]
+  RFQDate; 
+  
+                  @UI.lineItem: [ {
+    position: 151 , 
+    importance: #HIGH, 
+    label: 'Supplier Quotation'
+  } ]
+  @UI.identification: [ {
+    position: 151 , 
+    label: 'Supplier Quotation'
+  } ]
+  SupplierQuotation; 
+  
+                    @UI.lineItem: [ {
+    position: 152 , 
+    importance: #HIGH, 
+    label: 'Supplier Quotation Date'
+  } ]
+  @UI.identification: [ {
+    position: 152 , 
+    label: 'Supplier Quotation Date'
+  } ]
+  supplierquotationdate;  
+/////////////////////////////// ********************* ///////////////////////////////////////  
+  
+  @UI.lineItem: [ {
+    position: 153 , 
+    importance: #HIGH, 
+    label: 'Base unit'
+  } ]
+  @UI.identification: [ {
+    position: 153 , 
+    label: 'Base unit'
+  } ]
+  Baseunit;
+  
+  @UI.lineItem: [ {
+    position: 160 , 
+    importance: #HIGH, 
+    label: 'Profit center'
+  } ]
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Profit center'
+  } ]
+  Profitcenter;
+  
+  @UI.lineItem: [ {
+    position: 170 , 
+    importance: #HIGH, 
+    label: 'Purchase order type'
+  } ]
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Purchase order type'
+  } ]
+  Purchaseordertype;
+  
+  @UI.lineItem: [ {
+    position: 180 , 
+    importance: #HIGH, 
+    label: 'Purchase order date'
+  } ]
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Purchase order date'
+  } ]
+  Purchaseorderdate;
+  
+  @UI.lineItem: [ {
+    position: 190 , 
+    importance: #HIGH, 
+    label: 'Purchasing organization'
+  } ]
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Purchasing organization'
+  } ]
+  Purchasingorganization;
+  
+  @UI.lineItem: [ {
+    position: 200 , 
+    importance: #HIGH, 
+    label: 'Purchasing group'
+  } ]
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Purchasing group'
+  } ]
+  Purchasinggroup;
+  
+  @UI.lineItem: [ {
+    position: 210 , 
+    importance: #HIGH, 
+    label: 'Mrn quantity in base unit'
+  } ]
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'Mrn quantity in base unit'
+  } ]
+  Mrnquantityinbaseunit;
+  
+  @UI.lineItem: [ {
+    position: 220 , 
+    importance: #HIGH, 
+    label: 'Mrn posting date'
+  } ]
+  @UI.identification: [ {
+    position: 220 , 
+    label: 'Mrn posting date'
+  } ]
+  Mrnpostingdate;
+  
+  @UI.lineItem: [ {
+    position: 230 , 
+    importance: #HIGH, 
+    label: 'Hsn code'
+  } ]
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'Hsn code'
+  } ]
+  Hsncode;
+  
+  @UI.lineItem: [ {
+    position: 240 , 
+    importance: #HIGH, 
+    label: 'Tax code name'
+  } ]
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Tax code name'
+  } ]
+  Taxcodename;
+  
+  @UI.lineItem: [ {
+    position: 250 , 
+    importance: #HIGH, 
+    label: 'Original reference document'
+  } ]
+  @UI.identification: [ {
+    position: 250 , 
+    label: 'Original reference document'
+  } ]
+  Originalreferencedocument;
+  
+  @UI.lineItem: [ {
+    position: 260 , 
+    importance: #HIGH, 
+    label: 'Igst'
+  } ]
+  @UI.identification: [ {
+    position: 260 , 
+    label: 'Igst'
+  } ]
+  Igst;
+  
+  @UI.lineItem: [ {
+    position: 270 , 
+    importance: #HIGH, 
+    label: 'Sgst'
+  } ]
+  @UI.identification: [ {
+    position: 270 , 
+    label: 'Sgst'
+  } ]
+  Sgst;
+  
+  @UI.lineItem: [ {
+    position: 280 , 
+    importance: #HIGH, 
+    label: 'Cgst'
+  } ]
+  @UI.identification: [ {
+    position: 280 , 
+    label: 'Cgst'
+  } ]
+  Cgst;
+  
+  @UI.lineItem: [ {
+    position: 290 , 
+    importance: #HIGH, 
+    label: 'Rate igst'
+  } ]
+  @UI.identification: [ {
+    position: 290 , 
+    label: 'Rate igst'
+  } ]
+  Rateigst;
+  
+  @UI.lineItem: [ {
+    position: 300 , 
+    importance: #HIGH, 
+    label: 'Rate cgst'
+  } ]
+  @UI.identification: [ {
+    position: 300 , 
+    label: 'Rate cgst'
+  } ]
+  Ratecgst;
+  
+  @UI.lineItem: [ {
+    position: 310 , 
+    importance: #HIGH, 
+    label: 'Rate sgst'
+  } ]
+  @UI.identification: [ {
+    position: 310 , 
+    label: 'Rate sgst'
+  } ]
+  Ratesgst;
+  
+  @UI.lineItem: [ {
+    position: 320 , 
+    importance: #HIGH, 
+    label: 'Journal document refID'
+  } ]
+  @UI.identification: [ {
+    position: 320 , 
+    label: 'Journal document refID'
+  } ]
+  JournaldocumentrefID;
+  
+  @UI.lineItem: [ {
+    position: 330 , 
+    importance: #HIGH, 
+    label: 'Journal document date'
+  } ]
+  @UI.identification: [ {
+    position: 330 , 
+    label: 'Journal document date'
+  } ]
+  Journaldocumentdate;
+  
+  @UI.lineItem: [ {
+    position: 340 , 
+    importance: #HIGH, 
+    label: 'Isreversed'
+  } ]
+  @UI.identification: [ {
+    position: 340 , 
+    label: 'Isreversed'
+  } ]
+  Isreversed;
+  
+  @UI.lineItem: [ {
+    position: 350 , 
+    importance: #HIGH, 
+    label: 'Basic rate'
+  } ]
+  @UI.identification: [ {
+    position: 350 , 
+    label: 'Basic rate'
+  } ]
+  Basicrate;
+  
+  @UI.lineItem: [ {
+    position: 360 , 
+    importance: #HIGH, 
+    label: 'Net amount'
+  } ]
+  @UI.identification: [ {
+    position: 360 , 
+    label: 'Net amount'
+  } ]
+  Netamount;
+  
+  @UI.lineItem: [ {
+    position: 370 , 
+    importance: #HIGH, 
+    label: 'Tax amount'
+  } ]
+  @UI.identification: [ {
+    position: 370 , 
+    label: 'Tax amount'
+  } ]
+  Taxamount;
+  
+  @UI.lineItem: [ {
+    position: 380 , 
+    importance: #HIGH, 
+    label: 'Round off'
+  } ]
+  @UI.identification: [ {
+    position: 380 , 
+    label: 'Round off'
+  } ]
+  Roundoff;
+  
+  @UI.lineItem: [ {
+    position: 390 , 
+    importance: #HIGH, 
+    label: 'Mandi tax'
+  } ]
+  @UI.identification: [ {
+    position: 390 , 
+    label: 'Mandi tax'
+  } ]
+  Manditax;
+  
+  @UI.lineItem: [ {
+    position: 400 , 
+    importance: #HIGH, 
+    label: 'Mandi cess'
+  } ]
+  @UI.identification: [ {
+    position: 400 , 
+    label: 'Mandi cess'
+  } ]
+  Mandicess;
+  
+  @UI.lineItem: [ {
+    position: 410 , 
+    importance: #HIGH, 
+    label: 'Discount'
+  } ]
+  @UI.identification: [ {
+    position: 410 , 
+    label: 'Discount'
+  } ]
+  Discount;
+  
+  @UI.lineItem: [ {
+    position: 420 , 
+    importance: #HIGH, 
+    label: 'Total amount'
+  } ]
+  @UI.identification: [ {
+    position: 420 , 
+    label: 'Total amount'
+  } ]
+  Totalamount;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for Purchase Invoice'
+define service ZSD_PurchaseInv {
+  expose ZC_purchaseinvTP;
+  expose ZC_purchaselineTP;
+}

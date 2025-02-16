@@ -1,0 +1,120 @@
+managed;
+strict ( 2 );
+define behavior for ZR_purchaseinvTP alias purchaseinv
+implementation in class ZBP_R_purchaseinvTP unique
+persistent table ZPURCHINVPROC
+etag master Creationdatetime
+lock master
+authorization master( global )
+
+{
+  field ( readonly )
+   Creationdatetime;
+
+  field ( readonly : update )
+   Companycode,
+   Fiscalyearvalue,
+   Supplierinvoice;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ZPURCHINVPROC
+  {
+    Companycode = COMPANYCODE;
+    Fiscalyearvalue = FISCALYEARVALUE;
+    Supplierinvoice = SUPPLIERINVOICE;
+    Supplierinvoicewthnfiscalyear = SUPPLIERINVOICEWTHNFISCALYEAR;
+    Creationdatetime = CREATIONDATETIME;
+    AddressID = AddressID;
+  }
+
+  association _purchaseline { create; }
+}
+
+define behavior for ZR_purchaselineTP alias purchaseline
+implementation in class ZBP_R_purchaselineTP unique
+persistent table ZPURCHINVLINES
+etag dependent by _purchaseinv
+lock dependent by _purchaseinv
+authorization dependent by _purchaseinv
+
+{
+  field ( readonly )
+   Companycode,
+   Fiscalyearvalue,
+   Supplierinvoice;
+
+  field ( readonly : update )
+   Supplierinvoiceitem;
+
+
+  update;
+  delete;
+
+  mapping for ZPURCHINVLINES
+  {
+    Companycode = COMPANYCODE;
+    Fiscalyearvalue = FISCALYEARVALUE;
+    Supplierinvoice = SUPPLIERINVOICE;
+    Supplierinvoiceitem = SUPPLIERINVOICEITEM;
+    Postingdate = POSTINGDATE;
+    Plantname = PLANTNAME;
+    Plantadr = PLANTADR;
+    Plantcity = PLANTCITY;
+    Plantgst = PLANTGST;
+    Plantpin = PLANTPIN;
+    Product = PRODUCT;
+    Productname = PRODUCTNAME;
+    Purchaseorder = PURCHASEORDER;
+    Purchaseorderitem = PURCHASEORDERITEM;
+
+///////////////////////// **************************** ///////////////////////////////////
+  product_trade_name = product_trade_name;
+  vendor_invoice_no = vendor_invoice_no;
+  vendor_invoice_date = vendor_invoice_date;
+  vendor_type = vendor_type;
+  typeofenterprise = TypeofEnterprise;
+  udhyamaadharno = UdhyamAadharNo;
+  udhyamcertificatedate = UdhyamCertificateDate;
+  udhyamcertificatereceivingdate = UdhyamCertificateReceivingDate;
+  rfqno = RFQNO;
+  rfqdate = RFQDate;
+  supplierquotation = SupplierQuotation;
+  supplierquotationdate = supplierquotationdate;
+////////////////////////////////*******************//////////////////////////////////////
+
+    Baseunit = BASEUNIT;
+    Profitcenter = PROFITCENTER;
+    Purchaseordertype = PURCHASEORDERTYPE;
+    Purchaseorderdate = PURCHASEORDERDATE;
+    Purchasingorganization = PURCHASINGORGANIZATION;
+    Purchasinggroup = PURCHASINGGROUP;
+    Mrnquantityinbaseunit = MRNQUANTITYINBASEUNIT;
+    Mrnpostingdate = MRNPOSTINGDATE;
+    Hsncode = HSNCODE;
+    Taxcodename = TAXCODENAME;
+    Originalreferencedocument = ORIGINALREFERENCEDOCUMENT;
+    Igst = IGST;
+    Sgst = SGST;
+    Cgst = CGST;
+    Rateigst = RATEIGST;
+    Ratecgst = RATECGST;
+    Ratesgst = RATESGST;
+    JournaldocumentrefID = JOURNALDOCUMENTREFID;
+    Journaldocumentdate = JOURNALDOCUMENTDATE;
+    Isreversed = ISREVERSED;
+    Basicrate = BASICRATE;
+    Netamount = NETAMOUNT;
+    Taxamount = TAXAMOUNT;
+    Roundoff = ROUNDOFF;
+    Manditax = MANDITAX;
+    Mandicess = MANDICESS;
+    Discount = DISCOUNT;
+    Totalamount = TOTALAMOUNT;
+  }
+
+  association _purchaseinv;
+}

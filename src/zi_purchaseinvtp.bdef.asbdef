@@ -1,0 +1,17 @@
+interface;
+define behavior for ZI_purchaseinvTP alias purchaseinv
+use etag
+
+{
+  use delete;
+
+  use association _purchaseline { create; }
+}
+
+define behavior for ZI_purchaselineTP alias purchaseline
+use etag
+
+{
+
+  use association _purchaseinv;
+}

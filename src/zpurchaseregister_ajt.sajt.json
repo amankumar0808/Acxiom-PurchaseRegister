@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Purchase Register for Application Job Template",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZPURCHASEREGISTER_AJCE"
+  },
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "P_SIMUL",
+        "value": ""
+      }
+    ]
+  }
+}
